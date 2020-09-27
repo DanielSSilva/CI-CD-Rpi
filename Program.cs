@@ -6,7 +6,7 @@ namespace CI_CD_tests_PI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine($"CPU architecture = {System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE")}");
         }
     }
 }
