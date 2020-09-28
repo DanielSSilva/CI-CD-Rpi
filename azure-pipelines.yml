@@ -2,7 +2,7 @@ trigger:
 - '*'
 
 pool:
-  name: 'RaspberryPi4'
+  name: 'Raspberry Pi 4'
   demands:
     - dotnet
 
