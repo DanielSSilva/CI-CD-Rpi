@@ -1,5 +1,5 @@
-# trigger:
-# - '*'
+trigger:
+- '*'
 
 pool:
   name: 'RaspberryPi4'
