@@ -1,5 +1,5 @@
-trigger:
-- '*'
+# trigger:
+# - '*'
 
 pool:
   name: 'RaspberryPi4'
@@ -16,20 +16,20 @@ steps:
   displayName: 'Restore project dependencies'
   inputs:
     command: 'restore'
-    projects: {{ variables.projectPath }}
+    projects: ${{ variables.projectPath }}
 
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
     command: 'build'
     arguments: '--no-restore --configuration $(buildConfiguration)'
-    projects: {{ variables.projectPath }}
+    projects: ${{ variables.projectPath }}
 
 - task: DotNetCoreCLI@2
   displayName: 'Publish the project - $(buildConfiguration)'
   inputs:
     command: 'publish'
-    projects: {{ variables.projectPath }}
+    projects: ${{ variables.projectPath }}
     publishWebProjects: false
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
@@ -38,4 +38,3 @@ steps:
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
 
-  
