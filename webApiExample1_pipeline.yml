@@ -5,6 +5,7 @@ pool:
   name: 'RaspberryPi4'
   demands:
     - dotnet
+    - agent.name -equals control1 
 
 variables:
   buildConfiguration: 'Release'

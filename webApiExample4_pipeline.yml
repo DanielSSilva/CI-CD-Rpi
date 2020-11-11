@@ -5,7 +5,7 @@ pool:
   name: 'RaspberryPi4'
   demands:
     - dotnet
-
+    - agent.name -equals node3
 variables:
   buildConfiguration: 'Release'
   projectPath: 'WebApiExample4/WebApiExample4.csproj'

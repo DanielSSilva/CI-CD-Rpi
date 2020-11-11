@@ -5,6 +5,7 @@ pool:
   name: 'RaspberryPi4'
   demands:
     - dotnet
+    - agent.name -equals node2
 
 variables:
   buildConfiguration: 'Release'
